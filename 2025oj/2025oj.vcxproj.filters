@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2025oj.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1075 - 2025年C语言入队习题-0x14（递归）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1076 - 2025年C语言入队习题-0x15（模拟）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="exam.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1077 - 2025年C语言入队习题-0x16（杂合）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1078 - 2025年C语言入队习题-0x17（组合数学）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1079 - 2025年C语言入队习题-0x18（难题）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1069 - 2025年C语言提高-0x0E（数学）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1092 - 2026年C语言2作业-0x00（二分、双指针）.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1055 - 2025年C语言作业1-0x00（IO，数学计算，分支）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1056 - 2025年C语言作业1-0x01（数学计算）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1057 - 2025年C语言作业1-0x02（数学、循环.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1058 - 2025年C语言作业1-0x03（循环、数组）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1059 - 2025年C语言作业1-0x04（循环，数组.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1060 - 2025年C语言作业-0x05（循环、数组）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1061 - 2025年C语言作业-0x06（字符串）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1062 - 2025年C语言作业-0x07（字符串.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1063 - 2025年C语言作业-0x08（枚举）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1064 - 2025年C语言作业-0x09（进制转换）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1065 - 2025年C语言作业-0x0A（素数）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1066 - 2025年C语言作业-0x0B（模拟）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1067 - 2025年C语言提高-0x0C（贪心）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1068 - 2025年C语言提高-0x0D（模拟）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1070 - 2025年C语言提高-0x0F（函数）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1071 - 2025年C语言提高-0x10（组合数）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1072 - 2025年C语言提前作业-0x11（位运算）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1073 - 2025年C语言提前作业-0x12（二分、双指针）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Contest1074 - 2025年C语言提前作业-0x13（二分、双指针）.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
