@@ -1,7 +1,12 @@
 # Visual Studio
 .vs/
-.x64/
-.Debug/
-.Release/
-*.user/
-*.suo/
+x64/
+Debug/
+Release/
+*.user
+*.suo
+*.exe
+*.obj
+*.ilk
+*.pdb
+*.tlog/
