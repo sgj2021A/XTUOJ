@@ -77,52 +77,52 @@
 //}
 //时间超限
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-typedef struct{
-	int a,b;
-}item;
-item res[40000];
-int index;
-char str[520];
-int compare(const void *a,const void *b){
-    item *item1 = (item*)a;
-    item *item2 = (item*)b;
-    if(item1->a != item2->a)
-        return item1->a - item2->a;
-    return item1->b - item2->b;
-}
-int process(int n){//n是目标得分 
-	int len = strlen(str);
-	int a = 0,b = 0,cnt = 0,a_w = 0,b_w = 0;//cnt是总局数 
-	for(int i = 0;i < len;i++){
-		if(str[i] == 'W')a++;
-		else b++;
-		if(a == n)cnt++,a_w++,a = 0,b = 0;
-		else if(b == n)cnt++,b_w++,a = 0,b = 0;
-	}
-	if(a != 0 || b != 0 || a_w <= b_w || a_w == 0)return 0;
-	return a_w;	
-}
-int main(){
-	while(scanf("%s",str) != EOF){
-		index = 0;
-		int len = strlen(str);
-		for(int i = 1;i <= len;i++){
-			int cnt = process(i);
-			if(cnt != 0)res[index].a = i,res[index].b = cnt,index++;
-		}
-		qsort(res,index,sizeof(item),compare);
-		if(index == 0)printf("0\n");
-		else{
-			printf("%d\n",index);
-			for(int i = 0;i < index;i++){
-				printf("%d %d\n",res[i].a,res[i].b);
-			}	
-		}
-	}
-}
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//typedef struct{
+//	int a,b;
+//}item;
+//item res[40000];
+//int index;
+//char str[520];
+//int compare(const void *a,const void *b){
+//    item *item1 = (item*)a;
+//    item *item2 = (item*)b;
+//    if(item1->a != item2->a)
+//        return item1->a - item2->a;
+//    return item1->b - item2->b;
+//}
+//int process(int n){//n是目标得分 
+//	int len = strlen(str);
+//	int a = 0,b = 0,cnt = 0,a_w = 0,b_w = 0;//cnt是总局数 
+//	for(int i = 0;i < len;i++){
+//		if(str[i] == 'W')a++;
+//		else b++;
+//		if(a == n)cnt++,a_w++,a = 0,b = 0;
+//		else if(b == n)cnt++,b_w++,a = 0,b = 0;
+//	}
+//	if(a != 0 || b != 0 || a_w <= b_w || a_w == 0)return 0;
+//	return a_w;	
+//}
+//int main(){
+//	while(scanf("%s",str) != EOF){
+//		index = 0;
+//		int len = strlen(str);
+//		for(int i = 1;i <= len;i++){
+//			int cnt = process(i);
+//			if(cnt != 0)res[index].a = i,res[index].b = cnt,index++;
+//		}
+//		qsort(res,index,sizeof(item),compare);
+//		if(index == 0)printf("0\n");
+//		else{
+//			printf("%d\n",index);
+//			for(int i = 0;i < index;i++){
+//				printf("%d %d\n",res[i].a,res[i].b);
+//			}	
+//		}
+//	}
+//}
 //--------------------------------------------------
 
 //问题 B: Maze

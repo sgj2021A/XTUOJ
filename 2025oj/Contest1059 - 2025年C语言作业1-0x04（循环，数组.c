@@ -158,58 +158,58 @@
 //}
 
 //问题 E: 十字
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#define Max_Map 125
-int main(){
-	char a;
-	while(scanf("%c",&a) != EOF){
-		char map[Max_Map][Max_Map]={};
-    	for (int i = 0; i < Max_Map; i++) {
-        	memset(map[i], ' ', Max_Map);
-    	}		
-		int point=(a-'A'+1)*2; 
-		for(int i=a-'A'+1;i<=point*2-1-(a-'A');i++){
-			map[i][point]='A';
-		} 
-		for(int i=a-'A'+1;i<=point*2-1-(a-'A');i++){
-			map[point][i]='A';
-		}
-		for(char k = 'B'; k <= a; k++) {
-		    for(int i = 1; i <= point*2-1; i++) {
-		        for(int j = 1; j <= point*2-1; j++) {
-		            // 跳过已填充区域
-		            if(map[i][j] != ' ') continue;
-		            
-		            // 检查四个方向是否有前一个字符
-		            if(map[i-1][j] == k-1 || map[i+1][j] == k-1 || map[i][j-1] == k-1 || map[i][j+1] == k-1) {
-		            	map[i][j] = k;
-		            }else if(map[i - 1][j - 1] == k - 1 ||map[i + 1][j - 1] == k - 1 ||map[i - 1][j + 1] == k - 1 ||map[i + 1][j + 1] == k - 1){
-		            	map[i][j] = k;
-					}
-		        }
-		    }
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//#define Max_Map 125
+//int main(){
+//	char a;
+//	while(scanf("%c",&a) != EOF){
+//		char map[Max_Map][Max_Map]={};
+//    	for (int i = 0; i < Max_Map; i++) {
+//        	memset(map[i], ' ', Max_Map);
+//    	}		
+//		int point=(a-'A'+1)*2; 
+//		for(int i=a-'A'+1;i<=point*2-1-(a-'A');i++){
+//			map[i][point]='A';
+//		} 
+//		for(int i=a-'A'+1;i<=point*2-1-(a-'A');i++){
+//			map[point][i]='A';
+//		}
+//		for(char k = 'B'; k <= a; k++) {
 //		    for(int i = 1; i <= point*2-1; i++) {
 //		        for(int j = 1; j <= point*2-1; j++) {
 //		            // 跳过已填充区域
 //		            if(map[i][j] != ' ') continue;
-//		            // 检查是否在角上的区域
-//					if(map[i][j+1] == k && map[i+1][j] == k && map[i+1][j+1] == k - 1 || map[i][j+1] == k && map[i-1][j] == k && map[i-1][j+1] == k - 1 || map[i][j-1] == k && map[i-1][j] == k && map[i-1][j-1] == k - 1 || map[i][j-1] == k && map[i+1][j] == k && map[i+1][j-1] == k - 1 ) {
+//		            
+//		            // 检查四个方向是否有前一个字符
+//		            if(map[i-1][j] == k-1 || map[i+1][j] == k-1 || map[i][j-1] == k-1 || map[i][j+1] == k-1) {
 //		            	map[i][j] = k;
-//		            } 
+//		            }else if(map[i - 1][j - 1] == k - 1 ||map[i + 1][j - 1] == k - 1 ||map[i - 1][j + 1] == k - 1 ||map[i + 1][j + 1] == k - 1){
+//		            	map[i][j] = k;
+//					}
 //		        }
 //		    }
-		}
-		for(int i=1;i<=point*2-1;i++){
-			for(int j=1;j<=point*2-1;j++){
-				printf("%c",map[i][j]);
-			}
-			printf("\n");
-		}
-	}
-	return 0;
-}
+////		    for(int i = 1; i <= point*2-1; i++) {
+////		        for(int j = 1; j <= point*2-1; j++) {
+////		            // 跳过已填充区域
+////		            if(map[i][j] != ' ') continue;
+////		            // 检查是否在角上的区域
+////					if(map[i][j+1] == k && map[i+1][j] == k && map[i+1][j+1] == k - 1 || map[i][j+1] == k && map[i-1][j] == k && map[i-1][j+1] == k - 1 || map[i][j-1] == k && map[i-1][j] == k && map[i-1][j-1] == k - 1 || map[i][j-1] == k && map[i+1][j] == k && map[i+1][j-1] == k - 1 ) {
+////		            	map[i][j] = k;
+////		            } 
+////		        }
+////		    }
+//		}
+//		for(int i=1;i<=point*2-1;i++){
+//			for(int j=1;j<=point*2-1;j++){
+//				printf("%c",map[i][j]);
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
 
 
 //问题 F: 矩阵乘法

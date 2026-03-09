@@ -144,48 +144,48 @@
 //}
 
 //问题 E: 单调
-#include <stdio.h>
-
-// 判断整数n在b进制下是否是单调的
-int is_monotonic(int n, int b) {
-    int prev_digit = -1; // 前一位数字，初始为-1以保证第一个数字一定比它大
-    while (n > 0) {
-        int current_digit = n % b;
-        if (current_digit <= prev_digit) {
-            return 0; // 当前位不大于前一位，不满足单调
-        }
-        prev_digit = current_digit;
-        n /= b;
-    }
-    return 1; // 所有位都满足条件
-}
-
-// 寻找最小的满足条件的进制b
-int find_min_base(int n) {
-    int low = 2, high = n;
-    int ans = n; // 初始设为一个极大值
-    while (low <= high) {
-        int mid = (low + high) / 2;
-        if (is_monotonic(n, mid)) {
-            ans = mid;
-            high = mid - 1; // 尝试寻找更小的b
-        } else {
-            low = mid + 1; // 需要更大的b
-        }
-    }
-    return ans;
-}
-
-int main() {
-    int T;
-    scanf("%d", &T);
-    for (int i = 0; i < T; i++) {
-        int n;
-        scanf("%d", &n);
-        printf("%d\n", find_min_base(n));
-    }
-    return 0;
-}
+//#include <stdio.h>
+//
+//// 判断整数n在b进制下是否是单调的
+//int is_monotonic(int n, int b) {
+//    int prev_digit = -1; // 前一位数字，初始为-1以保证第一个数字一定比它大
+//    while (n > 0) {
+//        int current_digit = n % b;
+//        if (current_digit <= prev_digit) {
+//            return 0; // 当前位不大于前一位，不满足单调
+//        }
+//        prev_digit = current_digit;
+//        n /= b;
+//    }
+//    return 1; // 所有位都满足条件
+//}
+//
+//// 寻找最小的满足条件的进制b
+//int find_min_base(int n) {
+//    int low = 2, high = n;
+//    int ans = n; // 初始设为一个极大值
+//    while (low <= high) {
+//        int mid = (low + high) / 2;
+//        if (is_monotonic(n, mid)) {
+//            ans = mid;
+//            high = mid - 1; // 尝试寻找更小的b
+//        } else {
+//            low = mid + 1; // 需要更大的b
+//        }
+//    }
+//    return ans;
+//}
+//
+//int main() {
+//    int T;
+//    scanf("%d", &T);
+//    for (int i = 0; i < T; i++) {
+//        int n;
+//        scanf("%d", &n);
+//        printf("%d\n", find_min_base(n));
+//    }
+//    return 0;
+//}
 //问题 F: 相同的数码
 //#include <stdio.h>
 //#include <stdlib.h>

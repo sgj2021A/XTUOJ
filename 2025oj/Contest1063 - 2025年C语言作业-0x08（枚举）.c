@@ -571,45 +571,45 @@
 //}
 
 //问题 F: 两个数
-#include <stdio.h>
-#include <stdlib.h>
-int main(){
-	int n = 0;
-	while(scanf("%d", &n) == 1){
-		long long count = 0;
-		long long *number = (long long*)malloc(sizeof(long long) * n);
-		for(int i = 0;i < n;i++){
-			scanf("%lld",&number[i]);
-			count += number[i];
-		}
-		long long S =  count / (n - 2);
-		if(S * (n-2) != count){
-			printf("0\n");
-			free(number);
-			continue;
-		}
-		int total_up = 0;
-		for(int i = 0;i < n;i++){
-			if(number[i] > S){
-				total_up++;
-			}
-		}
-		free(number);
-		if(total_up > 2){
-			printf("0\n");
-			continue;
-		}
-		if(total_up == 2){
-			printf("1\n");
-			continue;
-		}		
-		if(total_up == 1){
-			printf("%d\n",n - 1);
-			continue;
-		}
-		printf("%lld\n",n*(n-1)/2);
-	}
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main(){
+//	int n = 0;
+//	while(scanf("%d", &n) == 1){
+//		long long count = 0;
+//		long long *number = (long long*)malloc(sizeof(long long) * n);
+//		for(int i = 0;i < n;i++){
+//			scanf("%lld",&number[i]);
+//			count += number[i];
+//		}
+//		long long S =  count / (n - 2);
+//		if(S * (n-2) != count){
+//			printf("0\n");
+//			free(number);
+//			continue;
+//		}
+//		int total_up = 0;
+//		for(int i = 0;i < n;i++){
+//			if(number[i] > S){
+//				total_up++;
+//			}
+//		}
+//		free(number);
+//		if(total_up > 2){
+//			printf("0\n");
+//			continue;
+//		}
+//		if(total_up == 2){
+//			printf("1\n");
+//			continue;
+//		}		
+//		if(total_up == 1){
+//			printf("%d\n",n - 1);
+//			continue;
+//		}
+//		printf("%lld\n",n*(n-1)/2);
+//	}
+//}
 
 //问题 G: Candy
 //#include <stdio.h>

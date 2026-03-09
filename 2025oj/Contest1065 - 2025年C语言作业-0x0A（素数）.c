@@ -533,73 +533,73 @@
 //    return 0;
 //}
 //时间超限（前缀和(二位数组)优化）
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <math.h>
-
-#define MaxRange 2500000
-int main() {
-	// 初始化素数数组
-	bool *primes = calloc(MaxRange, sizeof(bool));
-	for (int i = 2; i < MaxRange; i++) primes[i] = true;
-	primes[0] = primes[1] = false;
-
-	// 素数判断
-	for (long long i = 2; i <= sqrt(MaxRange); i++) {
-		if (primes[i]) {
-			for (long long j = i * i; j < MaxRange; j += i) {
-				primes[j] = false;
-			}
-		}
-	}
-	// 字符串编写
-	char *str = (char*)malloc(sizeof(char) * MaxRange);
-	int location = 0;
-	for(int i = 2; i < MaxRange; i++) {
-		if(primes[i]) {
-			char str_num[20];
-			sprintf(str_num,"%d",i);
-			for (int j = 0; str_num[j] != '\0'; j++) {
-				if (location >= MaxRange - 1) break;
-				str[location++] = str_num[j];
-			}
-		}
-		if(location >= MaxRange)break;
-	}
-	free(primes);
-//	printf("%d\n",location);
-	//前缀和优化
-	int *total[10];
-	for(int i = 0;i < 10;i++){
-		total[i] = (int *)malloc(sizeof(int) * location + 1);
-		total[i][0] = 0;
-	} 	
-	for(int i = 1;i <= location; i++){
-		for(int j = 0;j < 10;j++){
-			total[j][i] = total[j][i - 1];
-		}
-		total[str[i - 1] - '0'][i]++;
-	}
-	free(str);
-//	for(int i = 999900;i <= 1000000;i++){
-//		printf("%d : ",i);
-//		for(int j = 0;j < 10;j++){
-//			printf("%d ",total[j][i]);
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdbool.h>
+//#include <math.h>
+//
+//#define MaxRange 2500000
+//int main() {
+//	// 初始化素数数组
+//	bool *primes = calloc(MaxRange, sizeof(bool));
+//	for (int i = 2; i < MaxRange; i++) primes[i] = true;
+//	primes[0] = primes[1] = false;
+//
+//	// 素数判断
+//	for (long long i = 2; i <= sqrt(MaxRange); i++) {
+//		if (primes[i]) {
+//			for (long long j = i * i; j < MaxRange; j += i) {
+//				primes[j] = false;
+//			}
 //		}
-//		printf("\n");
 //	}
-	// 主函数
-	int k = 0;
-	scanf("%d",&k);
-	while(k--) {
-		int a,b,c,count = 0;
-		scanf("%d %d %d",&a,&b,&c);
-		printf("%d\n",total[c][b] - total[c][a - 1]);
-	}
-    for(int j = 0; j < 10; j++) free(total[j]);
-	return 0;
-}
+//	// 字符串编写
+//	char *str = (char*)malloc(sizeof(char) * MaxRange);
+//	int location = 0;
+//	for(int i = 2; i < MaxRange; i++) {
+//		if(primes[i]) {
+//			char str_num[20];
+//			sprintf(str_num,"%d",i);
+//			for (int j = 0; str_num[j] != '\0'; j++) {
+//				if (location >= MaxRange - 1) break;
+//				str[location++] = str_num[j];
+//			}
+//		}
+//		if(location >= MaxRange)break;
+//	}
+//	free(primes);
+////	printf("%d\n",location);
+//	//前缀和优化
+//	int *total[10];
+//	for(int i = 0;i < 10;i++){
+//		total[i] = (int *)malloc(sizeof(int) * location + 1);
+//		total[i][0] = 0;
+//	} 	
+//	for(int i = 1;i <= location; i++){
+//		for(int j = 0;j < 10;j++){
+//			total[j][i] = total[j][i - 1];
+//		}
+//		total[str[i - 1] - '0'][i]++;
+//	}
+//	free(str);
+////	for(int i = 999900;i <= 1000000;i++){
+////		printf("%d : ",i);
+////		for(int j = 0;j < 10;j++){
+////			printf("%d ",total[j][i]);
+////		}
+////		printf("\n");
+////	}
+//	// 主函数
+//	int k = 0;
+//	scanf("%d",&k);
+//	while(k--) {
+//		int a,b,c,count = 0;
+//		scanf("%d %d %d",&a,&b,&c);
+//		printf("%d\n",total[c][b] - total[c][a - 1]);
+//	}
+//    for(int j = 0; j < 10; j++) free(total[j]);
+//	return 0;
+//}
 //问题 G: 素数个数
 //#include <stdio.h>
 //#include <stdbool.h>

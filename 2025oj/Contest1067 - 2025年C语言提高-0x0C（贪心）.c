@@ -624,86 +624,86 @@
 //}
 //--------------------------------------------------
 //Œ Ã‚ L: Cow
-#include <stdio.h>
-#include <stdlib.h>
-int compare(const void* a,const void* b){
-	return(*(int *)b - *(int *)a);
-}
-int main(){
-	int s = 0;
-	scanf("%d",&s);
-	
-	while(s--){
-		int n , m , p , k ;
-		scanf("%d %d %d %d",&n,&m,&p,&k);
-		int x1,y1,x2,y2;
-		int x[110] = {0},y[110] = {0};
-		
-		for(int i = 1;i <= p; i++){
-			scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
-			if(x1 == x2){
-				x[y1 > y2 ? y2 : y1]++;
-			}else{
-				y[x1 > x2 ? x2 : x1]++;
-			}
-		}
-		
-		qsort(x,n,sizeof(int),compare);
-		qsort(y,m,sizeof(int),compare);
-		
-		int total = 0,re_k = 0;
-//		int total_k = 0;
-		
-//		for(int i = 0;i <= n;i++){
-//			if(x[i] != 0){
-//				total_k++;
+//#include <stdio.h>
+//#include <stdlib.h>
+//int compare(const void* a,const void* b){
+//	return(*(int *)b - *(int *)a);
+//}
+//int main(){
+//	int s = 0;
+//	scanf("%d",&s);
+//	
+//	while(s--){
+//		int n , m , p , k ;
+//		scanf("%d %d %d %d",&n,&m,&p,&k);
+//		int x1,y1,x2,y2;
+//		int x[110] = {0},y[110] = {0};
+//		
+//		for(int i = 1;i <= p; i++){
+//			scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
+//			if(x1 == x2){
+//				x[y1 > y2 ? y2 : y1]++;
+//			}else{
+//				y[x1 > x2 ? x2 : x1]++;
 //			}
 //		}
-//		for(int i = 0;i <= m;i++){
-//			if(y[i] != 0){
-//				total_k++;
+//		
+//		qsort(x,n,sizeof(int),compare);
+//		qsort(y,m,sizeof(int),compare);
+//		
+//		int total = 0,re_k = 0;
+////		int total_k = 0;
+//		
+////		for(int i = 0;i <= n;i++){
+////			if(x[i] != 0){
+////				total_k++;
+////			}
+////		}
+////		for(int i = 0;i <= m;i++){
+////			if(y[i] != 0){
+////				total_k++;
+////			}
+////		}
+//		int temp = k;
+//		//cs
+////		for(int i = 0;i <= n;i++){
+////			printf("%d ",x[i]);
+////		}
+////		printf("\n");
+////		for(int i = 0;i <= m;i++){
+////			printf("%d ",y[i]);
+////		}		
+////		printf("\n");
+//		//cs
+//		for(int i = 0,j = 0;x[i] != 0 || y[j] != 0;){
+//			if(x[i] > y[j]){
+//				if(k > 0){
+//					//printf("csK\n");//cs
+//					k--;
+//				}else{
+//					re_k++;
+//					total += x[i];
+//				}
+//				i++;
+//			}else{
+//				if(k > 0){
+//					//printf("csK\n");//cs
+//					k--;
+//				}else{
+//					re_k++;
+//					total += y[j];
+//				}
+//				j++;				
 //			}
 //		}
-		int temp = k;
-		//cs
-//		for(int i = 0;i <= n;i++){
-//			printf("%d ",x[i]);
+//		
+//		if(re_k == 0){
+//			printf("%d %d\n",total,temp - k);
+//		}else{
+//			printf("%d\n",total);
 //		}
-//		printf("\n");
-//		for(int i = 0;i <= m;i++){
-//			printf("%d ",y[i]);
-//		}		
-//		printf("\n");
-		//cs
-		for(int i = 0,j = 0;x[i] != 0 || y[j] != 0;){
-			if(x[i] > y[j]){
-				if(k > 0){
-					//printf("csK\n");//cs
-					k--;
-				}else{
-					re_k++;
-					total += x[i];
-				}
-				i++;
-			}else{
-				if(k > 0){
-					//printf("csK\n");//cs
-					k--;
-				}else{
-					re_k++;
-					total += y[j];
-				}
-				j++;				
-			}
-		}
-		
-		if(re_k == 0){
-			printf("%d %d\n",total,temp - k);
-		}else{
-			printf("%d\n",total);
-		}
-		
-	}
-	
-	return 0;
-}
+//		
+//	}
+//	
+//	return 0;
+//}

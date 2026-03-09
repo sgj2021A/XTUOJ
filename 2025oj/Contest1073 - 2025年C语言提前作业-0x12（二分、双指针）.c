@@ -966,69 +966,69 @@
 //} 
 //Ê±¼ä³¬ÏÞ
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int compare(const void *a,const void *b){
-	return (*(long long*)a > *(long long*)b) ? 1 : -1;
-} 
-
-int main(){
-	int s;
-	scanf("%d",&s);
-	
-	while(s--){
-		int n; 
-		long long m,a1,a2,L,R;
-		
-		scanf("%d %lld %lld %lld",&n,&a1,&a2,&m);
-		scanf("%lld %lld",&L,&R); 
-		long long *a = (long long*)malloc(sizeof(long long) * n);
-		
-		a[0] = a1;
-		a[1] = a2;
-		
-		for(int i = 2;i < n;i++){
-			a[i] = (a[i - 1] + a[i - 2]) % m;
-		}
-		
-		long long total_1 = 0;
-		for(int i = 0;i < n;i++){
-			if(2*a[i] <= R && 2*a[i] >= L){
-				total_1++;
-			}
-		}
-		
-		qsort(a,n,sizeof(long long),compare);
-		
-		int j = n - 1;
-		long long total_2 = 0;
-		for(int i = 0;i < n;i++){
-			while(j >= 0 && a[i] + a[j] > R){
-				j--;
-			}
-			if(j >= 0){
-				total_2 += (j + 1);
-			}
-		}
-		
-		long long total_3 = 0;
-		j = n - 1;
-		for(int i = 0;i < n;i++){
-			while(j >= 0 && a[i] + a[j] > L - 1){
-				j--;
-			}
-			if(j >= 0){
-				total_3 += (j + 1);
-			}
-		}
-				
-		long long total = total_2 - total_3;
-		long long result = (total + total_1) / 2;
-		printf("%lld\n",result);
-		free(a); 		
-	}
-	 
-	return 0;
-}
- 
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int compare(const void *a,const void *b){
+//	return (*(long long*)a > *(long long*)b) ? 1 : -1;
+//} 
+//
+//int main(){
+//	int s;
+//	scanf("%d",&s);
+//	
+//	while(s--){
+//		int n; 
+//		long long m,a1,a2,L,R;
+//		
+//		scanf("%d %lld %lld %lld",&n,&a1,&a2,&m);
+//		scanf("%lld %lld",&L,&R); 
+//		long long *a = (long long*)malloc(sizeof(long long) * n);
+//		
+//		a[0] = a1;
+//		a[1] = a2;
+//		
+//		for(int i = 2;i < n;i++){
+//			a[i] = (a[i - 1] + a[i - 2]) % m;
+//		}
+//		
+//		long long total_1 = 0;
+//		for(int i = 0;i < n;i++){
+//			if(2*a[i] <= R && 2*a[i] >= L){
+//				total_1++;
+//			}
+//		}
+//		
+//		qsort(a,n,sizeof(long long),compare);
+//		
+//		int j = n - 1;
+//		long long total_2 = 0;
+//		for(int i = 0;i < n;i++){
+//			while(j >= 0 && a[i] + a[j] > R){
+//				j--;
+//			}
+//			if(j >= 0){
+//				total_2 += (j + 1);
+//			}
+//		}
+//		
+//		long long total_3 = 0;
+//		j = n - 1;
+//		for(int i = 0;i < n;i++){
+//			while(j >= 0 && a[i] + a[j] > L - 1){
+//				j--;
+//			}
+//			if(j >= 0){
+//				total_3 += (j + 1);
+//			}
+//		}
+//				
+//		long long total = total_2 - total_3;
+//		long long result = (total + total_1) / 2;
+//		printf("%lld\n",result);
+//		free(a); 		
+//	}
+//	 
+//	return 0;
+//}
+// 

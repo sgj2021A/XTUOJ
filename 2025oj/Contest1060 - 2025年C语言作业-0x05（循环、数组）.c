@@ -534,38 +534,38 @@
 
 //问题 J: Robot(题目意思未理解)
 
-#include <stdio.h>
-#include <string.h>
- 
-char command[210];
-int len,numL,numR,numU,numD;
- 
-int main()
-{
-    while ( scanf("%s",command) != EOF)
-    {
-        len = strlen(command);
-        numL = numR = numU = numD = 0;
-        for (int i = 0; i < len; i ++)                      // 统计各指令数量
-        {
-            if (command[i] == 'L')       numL ++;
-            else if (command[i] == 'R')  numR ++;
-            else if (command[i] == 'U')  numU ++;
-            else                         numD ++;
-        }         //D指令改为L     此时U肯定要为0 (!U 与 U == 0 等效)
-        if      (numL+numD == numR && !numU)  puts("Yes");   // D指令替换成L指令
-        else if (numL+numU == numR && !numD)  puts("Yes");   // U指令替换成L指令
-        else if (numR+numD == numL && !numU)  puts("Yes");   // D指令替换成R指令
-        else if (numR+numU == numL && !numD)  puts("Yes");   // U指令替换成R指令
- 
-        else if (numU+numL == numD && !numR)  puts("Yes");   // L指令替换成U指令
-        else if (numU+numR == numD && !numL)  puts("Yes");   // R指令替换成U指令
-        else if (numD+numL == numU && !numR)  puts("Yes");   // L指令替换成D指令
-        else if (numD+numR == numU && !numL)  puts("Yes");   // R指令替换成D指令
-        else    puts("No");
-    }
-    return 0;
-}
+//#include <stdio.h>
+//#include <string.h>
+// 
+//char command[210];
+//int len,numL,numR,numU,numD;
+// 
+//int main()
+//{
+//    while ( scanf("%s",command) != EOF)
+//    {
+//        len = strlen(command);
+//        numL = numR = numU = numD = 0;
+//        for (int i = 0; i < len; i ++)                      // 统计各指令数量
+//        {
+//            if (command[i] == 'L')       numL ++;
+//            else if (command[i] == 'R')  numR ++;
+//            else if (command[i] == 'U')  numU ++;
+//            else                         numD ++;
+//        }         //D指令改为L     此时U肯定要为0 (!U 与 U == 0 等效)
+//        if      (numL+numD == numR && !numU)  puts("Yes");   // D指令替换成L指令
+//        else if (numL+numU == numR && !numD)  puts("Yes");   // U指令替换成L指令
+//        else if (numR+numD == numL && !numU)  puts("Yes");   // D指令替换成R指令
+//        else if (numR+numU == numL && !numD)  puts("Yes");   // U指令替换成R指令
+// 
+//        else if (numU+numL == numD && !numR)  puts("Yes");   // L指令替换成U指令
+//        else if (numU+numR == numD && !numL)  puts("Yes");   // R指令替换成U指令
+//        else if (numD+numL == numU && !numR)  puts("Yes");   // L指令替换成D指令
+//        else if (numD+numR == numU && !numL)  puts("Yes");   // R指令替换成D指令
+//        else    puts("No");
+//    }
+//    return 0;
+//}
 
 
 

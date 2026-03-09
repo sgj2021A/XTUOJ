@@ -550,79 +550,79 @@
 //----------------------------------
 //问题 G: 异或三元组
 
-#include <stdio.h>
-#include <stdbool.h>
-#define RANGE 10001
-//long long res[RANGE];
+//#include <stdio.h>
+//#include <stdbool.h>
+//#define RANGE 10001
+////long long res[RANGE];
+////int main(){
+////	//预处理
+////	long long result = 0;
+////	for(int i = 1;i < RANGE - 2;i++){
+////		for(int j = i + 1;j < RANGE - 1;j++){
+////			int num = i ^ j;
+////			if(num > j && num < RANGE)res[num]++;
+////		}
+////	}
+////	for(int i = 1;i < RANGE;i++)res[i] = res[i - 1] + res[i];
+////	
+////	int T;
+////	scanf("%d",&T);
+////	while(T--){
+////		int n;
+////		scanf("%d",&n);
+////		printf("%lld\n",res[n]);
+////	}
+////	return 0;
+////}
+////int main(){
+////	for(int n = 3;n <= 100;n++){
+////		long long result = 0;
+////		for(int i = 1;i <= n - 2;i++){
+////			for(int j = i + 1;j <= n - 1;j++){
+////				if(process(i,j,n))result++;
+////			}
+////		}
+////		printf("n : %lld res : %lld\n",n,result);
+////	}	
+////	return 0;
+////}
+//#include <stdio.h>
+//#include <math.h>
+//
+//long long process(int n) {
+//    if (n < 3) return 0;
+//    
+//    // 计算 m = floor(log2(n))
+//    int m = 0;
+//    while ((1 << m) <= n) {
+//        m++;
+//    }
+//    m--;  // 因为上面循环结束时，1<<m > n
+//    
+//    long long pow_2m = 1LL << m;  // 2^m
+//    long long pow_2m_1 = 1LL << (m - 1);  // 2^(m-1)
+//    long long pow_22m_1 = 1LL << (2 * m - 1);  // 2^(2m-1)
+//    
+//    // 计算 S(m) = (2^(2m-1) - 3*2^(m-1) + 1) / 3
+//    long long S = (pow_22m_1 - 3 * pow_2m_1 + 1) / 3;
+//    
+//    // 如果 n 正好是 2^m
+//    if (n == pow_2m) {
+//        return S;
+//    }
+//    
+//    // 否则计算 k = n - 2^m
+//    long long k = n - pow_2m;
+//    return S + k * (k + 1) / 2;
+//}
 //int main(){
-//	//预处理
-//	long long result = 0;
-//	for(int i = 1;i < RANGE - 2;i++){
-//		for(int j = i + 1;j < RANGE - 1;j++){
-//			int num = i ^ j;
-//			if(num > j && num < RANGE)res[num]++;
-//		}
-//	}
-//	for(int i = 1;i < RANGE;i++)res[i] = res[i - 1] + res[i];
-//	
 //	int T;
 //	scanf("%d",&T);
 //	while(T--){
 //		int n;
 //		scanf("%d",&n);
-//		printf("%lld\n",res[n]);
+//		long long res = process(n);
+//		printf("%lld\n",res);
 //	}
 //	return 0;
 //}
-//int main(){
-//	for(int n = 3;n <= 100;n++){
-//		long long result = 0;
-//		for(int i = 1;i <= n - 2;i++){
-//			for(int j = i + 1;j <= n - 1;j++){
-//				if(process(i,j,n))result++;
-//			}
-//		}
-//		printf("n : %lld res : %lld\n",n,result);
-//	}	
-//	return 0;
-//}
-#include <stdio.h>
-#include <math.h>
-
-long long process(int n) {
-    if (n < 3) return 0;
-    
-    // 计算 m = floor(log2(n))
-    int m = 0;
-    while ((1 << m) <= n) {
-        m++;
-    }
-    m--;  // 因为上面循环结束时，1<<m > n
-    
-    long long pow_2m = 1LL << m;  // 2^m
-    long long pow_2m_1 = 1LL << (m - 1);  // 2^(m-1)
-    long long pow_22m_1 = 1LL << (2 * m - 1);  // 2^(2m-1)
-    
-    // 计算 S(m) = (2^(2m-1) - 3*2^(m-1) + 1) / 3
-    long long S = (pow_22m_1 - 3 * pow_2m_1 + 1) / 3;
-    
-    // 如果 n 正好是 2^m
-    if (n == pow_2m) {
-        return S;
-    }
-    
-    // 否则计算 k = n - 2^m
-    long long k = n - pow_2m;
-    return S + k * (k + 1) / 2;
-}
-int main(){
-	int T;
-	scanf("%d",&T);
-	while(T--){
-		int n;
-		scanf("%d",&n);
-		long long res = process(n);
-		printf("%lld\n",res);
-	}
-	return 0;
-}

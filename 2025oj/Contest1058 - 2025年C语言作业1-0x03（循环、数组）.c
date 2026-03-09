@@ -549,69 +549,69 @@
 //将指数表示为二进制形式。
 //根据二进制位的值（0 或 1），决定是否将当前的底数乘到结果中
 //每次迭代时，底数自乘（平方），指数右移一位（相当于除以 2）。
-long long fast_pow(long long base, long long exp, long long mod) {
-    long long result = 1;
-    base %= mod;
-    while (exp) {
-        if (exp&1) {
-            result=(result*base) % mod;
-        }
-        base = (base * base)%mod;
-        exp>>= 1;
-    }
-    return result;
-}
-//分解质因数
-int get_prime_factors(long long n, long long *factors) {
-    int count = 0;
-    if (n % 2 == 0) {
-        factors[count++] = 2;
-        while (n % 2 == 0) {
-            n /= 2;
-        }
-    }
-    for (long long i=3; i*i<=n; i+=2) {
-        if (n%i == 0) {
-            factors[count++] = i;
-            while (n%i == 0) {
-                n/=i;
-            }
-        }
-    }
-    if (n>1) {
-        factors[count++] = n;
-    }
-    return count;
-}
-
-int main() {
-    long long p;
-    while (scanf("%lld",&p) != EOF) {
-        if (p==2) {
-            printf("Yes\n");
-            continue;
-        }
-        long long n = p - 1;
-        long long factors[100];
-        int count = get_prime_factors(n, factors);
-        int is_primitive = 1;
-        for (int i = 0; i < count; i++) {
-            long long q = factors[i];
-            long long r = n / q;
-            long long power = fast_pow(2, r, p);
-            if (power == 1) {
-                is_primitive = 0;
-                break;
-            }
-        }
-        if (is_primitive) {
-            printf("Yes\n");
-        } else {
-            printf("No\n");
-        }
-    }
-    return 0;
-}
+//long long fast_pow(long long base, long long exp, long long mod) {
+//    long long result = 1;
+//    base %= mod;
+//    while (exp) {
+//        if (exp&1) {
+//            result=(result*base) % mod;
+//        }
+//        base = (base * base)%mod;
+//        exp>>= 1;
+//    }
+//    return result;
+//}
+////分解质因数
+//int get_prime_factors(long long n, long long *factors) {
+//    int count = 0;
+//    if (n % 2 == 0) {
+//        factors[count++] = 2;
+//        while (n % 2 == 0) {
+//            n /= 2;
+//        }
+//    }
+//    for (long long i=3; i*i<=n; i+=2) {
+//        if (n%i == 0) {
+//            factors[count++] = i;
+//            while (n%i == 0) {
+//                n/=i;
+//            }
+//        }
+//    }
+//    if (n>1) {
+//        factors[count++] = n;
+//    }
+//    return count;
+//}
+//
+//int main() {
+//    long long p;
+//    while (scanf("%lld",&p) != EOF) {
+//        if (p==2) {
+//            printf("Yes\n");
+//            continue;
+//        }
+//        long long n = p - 1;
+//        long long factors[100];
+//        int count = get_prime_factors(n, factors);
+//        int is_primitive = 1;
+//        for (int i = 0; i < count; i++) {
+//            long long q = factors[i];
+//            long long r = n / q;
+//            long long power = fast_pow(2, r, p);
+//            if (power == 1) {
+//                is_primitive = 0;
+//                break;
+//            }
+//        }
+//        if (is_primitive) {
+//            printf("Yes\n");
+//        } else {
+//            printf("No\n");
+//        }
+//    }
+//    return 0;
+//}
 //问题 L: 连分式(过不去即使思路一致，测试数据正常)
 //void Swap(long long *a,long long *b){
 //	long long c;
