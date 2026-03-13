@@ -279,3 +279,67 @@
 //    }
 //    return 0;
 //}
+
+//Œ Ã‚ E: Estrella's Chocolate
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+////int compare(const void *a,const void *b){
+////  return *((long long*)a) > *((long long*)b) ? 1 : 0;
+////}
+//
+//int process(long long* num, long long size, long long index, int cut_num) {
+//    int cut = 1, count = 0;
+//    for (int i = 0; i < size; i++) {
+//        if (num[i] > index) {
+//            return 0;
+//        }
+//        if (count + num[i] > index) {
+//            cut++;
+//            count = num[i];
+//            if (cut > cut_num) return 0;
+//        }
+//        else {
+//            count += num[i];
+//        }
+//    }
+//    return cut <= cut_num;
+//}
+//
+//int main() {
+//    int s = 0;
+//
+//    scanf("%d", &s);
+//
+//    while (s--) {
+//        int n, m;
+//        scanf("%d %d", &n, &m);
+//        long long* num = (long long*)malloc(sizeof(long long) * n);
+//        long long left = 0, right = 0;
+//
+//        for (int i = 0; i < n; i++) {
+//            scanf("%lld", num + i);
+//            right += num[i];
+//            if (num[i] > left) left = num[i];
+//        }
+//
+//        long long result = right;
+//        long long index = 0;
+//        while (left <= right) {
+//            index = left + (right - left) / 2;
+//            if (process(num, n, index, m)) {
+//                result = index;
+//                right = index - 1;
+//            }
+//            else {
+//                left = index + 1;
+//            }
+//        }
+//        printf("%d\n", result);
+//        free(num);
+//    }
+//
+//
+//    return 0;
+//}
