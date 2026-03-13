@@ -149,7 +149,7 @@
     <ClCompile Include="Contest1077 - 2025年C语言入队习题-0x16（杂合）.c" />
     <ClCompile Include="Contest1078 - 2025年C语言入队习题-0x17（组合数学）.c" />
     <ClCompile Include="Contest1079 - 2025年C语言入队习题-0x18（难题）.c" />
-    <ClCompile Include="Contest1092 - 2026年C语言2作业-0x00（二分、双指针）.cpp" />
+    <ClCompile Include="Contest1092 - 2026年C语言2作业-0x00（二分、双指针）.c" />
     <ClCompile Include="exam.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>

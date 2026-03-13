@@ -42,7 +42,7 @@
     <ClCompile Include="Contest1069 - 2025年C语言提高-0x0E（数学）.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Contest1092 - 2026年C语言2作业-0x00（二分、双指针）.cpp">
+    <ClCompile Include="Contest1092 - 2026年C语言2作业-0x00（二分、双指针）.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Contest1055 - 2025年C语言作业1-0x00（IO，数学计算，分支）.c">

@@ -343,3 +343,45 @@
 //
 //    return 0;
 //}
+
+//Œ Ã‚ F: Craftman
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <limits.h>
+//#define forn(i,n) for(int i = 0;i < (int)n;i++)
+//void solve();
+//int main() {
+//	int T;
+//	scanf("%d", &T);
+//	while (T--)solve();
+//	return 0;
+//}
+//long long a[1010], b[1010];
+//int process(long long base, long long n, long long k) {
+//	forn(i, n) {
+//		long long need = base * a[i];
+//		long long add = need - b[i];
+//		if (add > 0)k -= add;
+//		if (k < 0)return 0;
+//	}
+//	return 1;
+//}
+//void solve() {
+//	int n, k;
+//	scanf("%d %d", &n, &k);
+//	forn(i, n)scanf("%lld", a + i);
+//	forn(i, n)scanf("%lld", b + i);
+//	long long l = 0, r = INT_MAX,res = 0;
+//	while (l <= r) {
+//		long long mid = l + (r - l) / 2;
+//		if (process(mid, n, k)) {
+//			res = mid;
+//			l = mid + 1;
+//		}
+//		else {
+//			r = mid - 1;
+//		}
+//	}
+//	printf("%lld\n", res);
+//}
