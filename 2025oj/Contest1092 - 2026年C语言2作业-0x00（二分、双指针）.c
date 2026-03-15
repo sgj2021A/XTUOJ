@@ -385,3 +385,49 @@
 //	}
 //	printf("%lld\n", res);
 //}
+
+//问题 G: 马里奥
+
+//#include <stdio.h>
+//#include <limits.h>
+//#define forn(i,n) for(int i = 0;i < (int)n;i++)
+//#define max(a,b) ((a)>(b)?(a):(b))
+//#define min(a,b) ((a)<(b)?(a):(b))
+//void solve();
+//int main() {
+//	solve();
+//}
+//int arr[100010];
+//int find(int num, int l, int r) {
+//	int res = -1;  
+//	while (l <= r) {
+//		int mid = l + (r - l) / 2;
+//		if (arr[mid] <= num) {
+//			res = mid;      
+//			l = mid + 1;    
+//		}
+//		else {
+//			r = mid - 1;    
+//		}
+//	}
+//	return res;  
+//}
+//void solve() {
+//	int w, n, d;
+//	scanf("%d %d %d", &w, &n, &d);
+//	arr[0] = 1;
+//	arr[n + 1] = w;
+//	for (int i = 1; i <= n; i++)scanf("%d", arr + i);
+//	int res = INT_MAX;
+//	int index = 0;
+//	if (arr[n + 1] - 1 <= d)printf("%d", -1);
+//	else {
+//		forn(i, n + 1) {
+//			if (w - arr[i] <= d)break;
+//			index = find(arr[i] + d, i, n);
+//			res = min(res, index - i);
+//			//printf("%d %d %d\n", index,index - i,res);
+//		}
+//		printf("%d", res);
+//	}
+//}
